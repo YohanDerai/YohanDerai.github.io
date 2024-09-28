@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio - P1</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <main></main>
+        <nav>
+            <ul class="menu">
+                <div class="toggle">
+                    <ion-icon name="add-outline"></ion-icon>
+                </div>
+                <li style="--i: 2">
+                    <a href="#home"
+                        ><ion-icon name="home-outline"></ion-icon
+                    ></a>
+                </li>
+                <li style="--i: 1">
+                    <a href="#experienceschool"
+                        ><ion-icon name="school-outline"></ion-icon
+                    ></a>
+                </li>
+                <li style="--i: 0">
+                    <a href="#experiencepro"
+                        ><ion-icon name="business-outline"></ion-icon
+                    ></a>
+                </li>
+                <li style="--i: 3">
+                    <a href="#competences"
+                        ><ion-icon name="trophy-outline"></ion-icon
+                    ></a>
+                </li>
+                <li style="--i: 4">
+                    <a href="#about"
+                        ><ion-icon name="filter-outline"></ion-icon
+                    ></a>
+                </li>
+                <li style="--i: 5">
+                    <a href="#projet"
+                        ><ion-icon name="bug-outline"></ion-icon
+                    ></a>
+                </li>
+                <li style="--i: 6">
+                    <a href="https://www.instagram.com/yohanderai/"
+                        ><ion-icon name="logo-instagram"></ion-icon
+                    ></a>
+                </li>
+                <li style="--i: 7">
+                    <a href="mailto:yohan.derai@epitech.eu"
+                        ><ion-icon name="id-card-outline"></ion-icon
+                    ></a>
+                </li>
+                <li style="--i: 8">
+                    <a href="https://www.linkedin.com/in/yo-ad-0ab035330/"
+                        ><ion-icon name="logo-linkedin"></ion-icon
+                    ></a>
+                </li>
+            </ul>
+        </nav>
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+        ></script>
+        <script>
+            let menuToggle = document.querySelector(".toggle");
+            let menu = document.querySelector(".menu");
+            let list = document.querySelectorAll("li");
+
+            menuToggle.onclick = () => {
+                menu.classList.toggle("active");
+                menuToggle.classList.toggle("active");
+            };
+
+            list.forEach((item) =>
+                item.addEventListener("click", function () {
+                    list.forEach((i) => i.classList.remove("active"));
+                    this.classList.add("active");
+                })
+            );
+        </script>
+
+        <div class="background-container">
+            <img
+                class="lune"
+                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png"
+                alt=""
+            />
+            <div class="stars"></div>
+            <div class="twinkling"></div>
+            <div class="clouds"></div>
+        </div>
+
+        <!-- Section Accueil -->
+
+        <!--une balise peu avoir plusieurs class si on met un espace, ici la balise a section ET home en css-->
+        <h1 id="home">Yohan Derai</h1>
+        <h2 class="intro">Apprentice developer and ethical hacker</h2>
+
+        <!--Experience école-->
+        <section id="experienceschool" class="section">
+            <!-- l'ID est unique, class permet de changer le css-->
+            <h2 class="ecole">Mon parcours Scolaire</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <img src="./Ipag.jpg" alt="Ipag BS" class="test" /> Master
+                    audit & finance d'entreprise
+                </div>
+                <div class="project-card">
+                    <img src="./ferrandi.jpeg" alt="Ipag BS" class="test" />CAP
+                    cuisine - CAP dessert gastronomique
+                </div>
+                <div class="project-card">
+                    <img src="./epitech.jpg" alt="Ipag BS" class="test" />
+                    <i>En cours</i>
+                </div>
+            </div>
+        </section>
+
+        <!--Experience pro-->
+        <section id="experiencepro" class="section">
+            <h2 class="pro">Mon parcours professionnel</h2>
+
+            <div class="projects-container">
+                <div class="project-card">
+                    Taï Ping - Controleur de gestion <br />
+                    2017
+                </div>
+                <div class="project-card">
+                    Bred Banque privée - Assistant régional <br />2018
+                </div>
+                <div class="project-card">
+                    HD Assurances - Assistant directeur financier<br />
+                    2019-2021
+                </div>
+                <div class="project-card">
+                    Cheval Blanc St Thropez - Comis garde manger<br />
+                    2021
+                </div>
+                <div class="project-card">
+                    Drouant Paris - Apprenti patissier <br />2022-2023
+                </div>
+                <div class="project-card">
+                    Wildorf Astoria Versailles - Chef de partie Snacking<br />
+                    2024
+                </div>
+            </div>
+            <!-- Compétence -->
+            <section id="competences" class="section">
+                <h2>Compétences</h2>
+
+                <div class="projects-container">
+                    <div class="project-card">Travail d'équipe</div>
+
+                    <div class="project-card">Gére la pression</div>
+                    <div class="project-card">Organisé</div>
+                    <div class="project-card">Apprends rapidement</div>
+                    <div class="project-card">S'adapte vite</div>
+                    <div class="project-card">Curieux</div>
+                </div>
+            </section>
+            <section id="about" class="section">
+                <h2 class="propos" style="color: #ffffffa2">À propos</h2>
+                <p>
+                    Faire une reconversion à 28 ans ? Passer de la finance à la cuisine, puis au développement ?<br>
+                    Et pourquoi pas.<br>
+                    
+                    Mon parcours dans différents secteurs m'a permis d'acquérir une maturité professionnelle et une solide expérience en entreprise. 
+                    J'ai développé des compétences et un esprit critique qui me permettent de m'adapter à toutes les situations, 
+                    y compris les plus stressantes. 
+                    J'ai appris à trouver des solutions rapidement et à organiser mon travail de manière à être le plus efficace possible.
+                </p>
+            </section>
+
+            <section id="projet" class="section">
+                <!-- l'ID est unique, class permet de changer le css-->
+                <h2>Projet en cours</h2>
+                <section id="projet1" class="section">
+                    <h4>Etical Hacking</h4>
+                    <div class="projects-container">
+                        <div class="project-card">
+                            <a
+                                href="https://youtu.be/h_f9lB4i-LA?si=W5IItuAzURTUxjrs"
+                                target="_blank"
+                            >
+                                <img
+                                    src="./téléchargement (1).jpeg"
+                                    class="video"
+                                />
+                            </a>
+                        </div>
+                        <div class="project-card">
+                            <a
+                                href="https://youtu.be/BysVax3MFe8?si=cSfcFMpkza_ufCY5"
+                                target="_blank"
+                            >
+                                <img
+                                    src="./téléchargement.jpeg"
+                                    alt="Ipag BS"
+                                    class="video"
+                                />
+                            </a>
+                        </div>
+                        <div class="project-card">
+                            <a
+                                href="https://youtu.be/gXUXN6oCjrg?si=Q1bcBLN7EPGZSH7Q"
+                                target="_blank"
+                            >
+                                <img
+                                    src="./téléchargement (2).jpeg"
+                                    alt="Ipag BS"
+                                    class="video"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="projet2" class="section">
+                    <div class="container">
+                        <!--création de la classe container pour le css-->
+                        <div
+                            class="circle"
+                            data-degree="25"
+                            data-color="#FF0000"
+                        >
+                            <h2 class="number">25<span>%</span></h2>
+                            <h4>html-CSS</h4>
+                        </div>
+
+                        <div
+                            class="circle"
+                            data-degree="15"
+                            data-color="#0000FF"
+                        >
+                            <!--création des parametre pour le scripte-->
+                            <h2 class="number">15<span>%</span></h2>
+                            <h4>Python</h4>
+                        </div>
+
+                        <div
+                            class="circle"
+                            data-degree="5"
+                            data-color="#04fc43"
+                        >
+                            <h2 class="number">5<span>%</span></h2>
+                            <!--création du span pour le % pour le css -->
+                            <h4>Java Script</h4>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <h2>Contactez-moi</h2>
+            <form>
+                <input type="text" placeholder="Nom" required />
+                <input type="email" placeholder="Email" required />
+                <textarea placeholder="Votre message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+
+        <script>
+            let animationTriggered = false; //variable pour dire que l'anim n'est pas encore déclenché. elle est définit ici animationTriggered, et valeur est fausse
+            // importe du JS dans du html.
+            document.addEventListener("scroll", function (event) {
+                //assure que le script se lance QUE quand la page html est chargée (DOMContentLoaded), ou scroll pour definir au scroll
+                let scrollPosition = window.scrollY; //position du scroll vers le bas (Y)
+                let triggerPosition = 2200; //active l'animation à 2200px
+                console.log(window.scrollY); //montre dans la console la position Y
+                //tant que le scrollpos<triggerpos, on sort de la boucle en skippant tous ce qu'il y a dedans. MAIS, avec le !, SI c est supereieur ET que animtrigg = à l'inverse de sa definition de base alors on continue.
+                if (scrollPosition > triggerPosition && !animationTriggered) {
+                    //si la pos de l'uti est > au trigger, lance l'anim ET verif si l'anime a deja été lancé
+                    animationTriggered = true; //va marqué après le if que l'animation est déclenché avec le true
+
+                    let circle = document.querySelectorAll(".circle"); //selec TOUT les elem du doc avec la class CSS .circle, et devient une variable. Devient une Nodelist (ensemble delement DOM), contient tous les elemm de cette classe
+                    circle.forEach(function (progress) {
+                        //applique l'anim de manière individuel pour chaque cercle, grace à (progress). cherche dans la Nodelist
+                        let degree = 0; //initialise la variable degree à 0, l'angle de progression du cercle
+                        var targetDegree = parseInt(
+                            progress.getAttribute("data-degree")
+                        ); //progress est une fonction JS. elle recup data-degree definit plus haut. definit en fonction de quoi le cercle progress. parseInt converti en chiffre
+                        let color = progress.getAttribute("data-color"); //progress recupere data-color, utilisé pour la progression du cercle
+                        let number = progress.querySelector(".number"); //affiche le nombre correspondant de la progression
+
+                        var interval = setInterval(function () {
+                            //crée une boucle, qui s'exec toutes les 20 ms. augmantant la l'angle du cercle
+                            degree += 1; //augmente le degrée du cercle de 1
+                            if (degree > targetDegree) {
+                                // permet de mettre fin à la boucle si degre > targetdegre, donc fin d'anim
+                                clearInterval(interval); //met fin à l'animation
+                                return; //empeche toute autre execution de code dans cette fonction
+                            }
+                            progress.style.background = `conic-gradient(${color} ${degree}%, #333 0%)`; //permet de modifier le fond du cercle en fonction de color et degree. la couleur de fond initial est defini par #333
+                        }, 20);
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

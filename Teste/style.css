@@ -1,0 +1,375 @@
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    color: white;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes move-background {
+    from {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+}
+@-webkit-keyframes move-background {
+    from {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+}
+
+@-moz-keyframes move-background {
+    from {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+}
+
+@-webkit-keyframes move-background {
+    from {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to {
+        -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+}
+
+.background-container {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.stars {
+    background: black
+        url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png)
+        repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: 0;
+}
+
+.twinkling {
+    width: 10000px;
+    height: 100%;
+    background: transparent
+        url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png")
+        repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+
+    -moz-animation: move-background 70s linear infinite;
+    -ms-animation: move-background 70s linear infinite;
+    -o-animation: move-background 70s linear infinite;
+    -webkit-animation: move-background 70s linear infinite;
+    animation: move-background 70s linear infinite;
+}
+
+.clouds {
+    width: 10000px;
+    height: 100%;
+    background: transparent
+        url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png")
+        repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+
+    -moz-animation: move-background 150s linear infinite;
+    -ms-animation: move-background 150s linear infinite;
+    -o-animation: move-background 150s linear infinite;
+    -webkit-animation: move-background 150s linear infinite;
+    animation: move-background 150s linear infinite;
+}
+.lune {
+    height: 50vh;
+    width: 50vh;
+    position: absolute;
+    z-index: 3;
+    right: 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+ion-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.menu {
+    z-index: 999; /* le nombre de couche*/
+    position: relative; /* tous les prochains enfant vont partir de la*/
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .toggle {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.menu .toggle.active {
+    transform: rotate(315deg);
+    background: red;
+    color: grey;
+}
+
+.menu li {
+    position: absolute;
+    left: 7px;
+    list-style: none;
+    transform-origin: 140px;
+    border: 2px solid red;
+    border-radius: 50%;
+    transform: rotate(calc(360deg / 9 * var(--i))) translateX(1px);
+    z-index: 10;
+    pointer-events: none;
+    scale: 0;
+    transition: 0.5s;
+    transition-delay: calc(0.1s * var(--i));
+}
+
+.menu.active li {
+    margin: 5px;
+    scale: 1;
+    pointer-events: initial;
+}
+
+.menu li a {
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75em;
+    color: red;
+    border-radius: 50%;
+    transition: 0.5s;
+    transform: rotate(calc(360deg / -9 * var(--i)));
+}
+
+.menu li.active a {
+    background: red;
+    color: gray;
+    width: 100%;
+}
+
+#home {
+    text-align: center;
+    height: 250px;
+    font-size: 100px;
+  
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    /* grande et moyenne carte*/
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 1200px;
+    border-radius: 10px;
+    border: solid 1px black;
+    background-color: rgb(68, 68, 68, 0.5);
+    /*box-shadow: 0px 4px 15px rgb(255, 255, 255);*/
+}
+
+/* Section Titles */
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffffffa9;
+    border-bottom: 2px solid #ff00009b;
+    padding-bottom: 10px;
+}
+
+/* projets */
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    /* petite carte */
+    background: rgb(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    /* box-shadow: 0px 4px 10px rgb(255, 255, 255);*/
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.test {
+    height: 100px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 20%;
+}
+
+.video {
+    height: 100px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 20%;
+    transition: transform 0.3s ease;
+}
+
+a:hover .video {
+    transform: scale(1.1);
+}
+
+/* le form*/
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f8f9fa;
+    color: rgb(0, 0, 0);
+}
+
+form button {
+    position: relative;
+    padding: 15px 40px;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #444;
+    box-shadow: inset 0 10px 5px rgba(0, 0, 0, 0.05),
+        0 25px 8px rgba(0, 0, 0, 0.05), 0 20px 15px rgba(0, 0, 0, 0.05),
+        inset 0 -10px 15px rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+}
+
+form button:hover {
+    color: #ff000088;
+}
+
+.intro {
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* séparation entre les cercle*/
+    flex-wrap: wrap; /*rends les cercles responsiv*/
+}
+
+.container .circle {
+    /*toutes les balise avec .circle qui sont dans .container*/
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*les mets en colonne*/
+    width: 200px; /*largeur premier cercle */
+    height: 200px; /*longueur premier cercle */
+    border-radius: 50%;
+}
+
+.container .circle::before {
+    content: "";
+    position: absolute;
+    inset: 4px; /* epaisseur de la couleur*/
+    border-radius: 50%; /*ombre dans la couleur */
+    background-color: #222; /*couleur de l'ombre*/
+    opacity: 0.7; /*opacité de l'ombre couleur*/
+}
+
+.container .circle::after {
+    content: "";
+    position: absolute;
+    width: 120px; /*rondeur v horizontal*/
+    height: 120px; /*rondeur v vertical*/
+    background-color: #333; /* back ground dans le cercle*/
+    border: 15px solid #4d4c51; /*le cercle interieur en relief*/
+    border-radius: 50%; /*forme les ronds sinon carré */
+    box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.25),
+        /*ombrage superieur dans le cercle*/ 0 10px 10px rgba(0, 0, 0, 0.75),
+        /*ombrage inferieur */ 0 -2px 10px rgba(255, 255, 255, 0.5),
+        /*halo lumineux dans le cercle */ inset 0 4px 2px rgba(0, 0, 0, 0.25),
+        inset 0 -2px 2px rgba(255, 255, 255, 0.5);
+}
+
+.container .circle .number {
+    /*c est les chiffres*/
+    position: relative;
+    color: #fff;
+    z-index: 10;
+    line-height: 1em;
+    font-size: 2em;
+}
+
+.container .circle .number span {
+    /*c est le %*/
+    font-size: 0.7em;
+    font-weight: 500;
+}
+
+.container .circle h4 {
+    /* ce qu'il y a dans le cercle écrit, n'appel que lui */
+    position: relative;
+    color: #fff;
+    z-index: 10;
+    font-weight: 500;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    line-height: 0.6em;
+}
