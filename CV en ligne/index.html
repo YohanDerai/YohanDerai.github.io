@@ -145,7 +145,7 @@
                     2019-2021
                 </div>
                 <div class="project-card">
-                    Cheval Blanc St Thropez - Comis garde manger<br />
+                    Cheval Blanc St Tropez - Comis garde manger<br />
                     2021
                 </div>
                 <div class="project-card">
@@ -173,13 +173,17 @@
             <section id="about" class="section">
                 <h2 class="propos" style="color: #ffffffa2">À propos</h2>
                 <p>
-                    Faire une reconversion à 28 ans ? Passer de la finance à la cuisine, puis au développement ?<br>
-                    Et pourquoi pas.<br>
-                    
-                    Mon parcours dans différents secteurs m'a permis d'acquérir une maturité professionnelle et une solide expérience en entreprise. 
-                    J'ai développé des compétences et un esprit critique qui me permettent de m'adapter à toutes les situations, 
-                    y compris les plus stressantes. 
-                    J'ai appris à trouver des solutions rapidement et à organiser mon travail de manière à être le plus efficace possible.
+                    Faire une reconversion à 28 ans ? Passer de la finance à la
+                    cuisine, puis au développement ?<br />
+                    Et pourquoi pas.<br />
+
+                    Mon parcours dans différents secteurs m'a permis d'acquérir
+                    une maturité professionnelle et une solide expérience en
+                    entreprise. J'ai développé des compétences et un esprit
+                    critique qui me permettent de m'adapter à toutes les
+                    situations, y compris les plus stressantes. J'ai appris à
+                    trouver des solutions rapidement et à organiser mon travail
+                    de manière à être le plus efficace possible.
                 </p>
             </section>
 
@@ -262,11 +266,32 @@
                 </section>
             </section>
             <h2>Contactez-moi</h2>
-            <form>
-                <input type="text" placeholder="Nom" required />
-                <input type="email" placeholder="Email" required />
-                <textarea placeholder="Votre message" required></textarea>
-                <button type="submit">Envoyer</button>
+            <form id="emailForm">
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Objet"
+                /><br />
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Message"
+                ></textarea>
+
+                <textarea
+                    id="nom"
+                    name="nom"
+                    placeholder="Nom"
+                ></textarea>
+                
+                <input
+                    type="button"
+                    value="Envoyer un mail"
+                    class="btnmail"
+                    onclick="sendEmail()"
+                />
             </form>
         </section>
 
@@ -306,6 +331,23 @@
                     });
                 }
             });
+        </script>
+
+        <script>
+            function sendEmail() { 
+                var subject = document.getElementById("subject").value; //creation de la fonction
+                var message = document.getElementById("message").value; //getelementbyid recupere les element dans le html avec l'ID en question
+                var nom = document.getElementById("nom").value;
+                var mailtoLink = //création variable mailto
+                    "mailto:yohan.derai@epitech.eu" + //création de l'ouvertur du mail par defaut utilisateur
+                    "?subject=" + //définit et selectionne l'objet du mail
+                    encodeURIComponent(subject) + //récupere ce qu'a écrit l'utilisateur
+                    "&body=" + //écriture du mail
+                    encodeURIComponent(message + "\n" + nom)  //récupere l ecriture de l uti + saut a la ligne + son nom
+
+
+                window.location.href = mailtoLink; // renvoie l'uti vers le liens var crée précédement
+            }
         </script>
     </body>
 </html>

@@ -281,7 +281,7 @@ form textarea {
     color: rgb(0, 0, 0);
 }
 
-form button {
+.btnmail {
     position: relative;
     padding: 15px 40px;
     font-size: 15px;
@@ -295,8 +295,9 @@ form button {
     border-radius: 50px;
 }
 
-form button:hover {
+.btnmail:hover {
     color: #ff000088;
+    box-shadow: 5px 5px 15px red ;
 }
 
 .intro {
